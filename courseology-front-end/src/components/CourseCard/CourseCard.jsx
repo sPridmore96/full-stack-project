@@ -11,8 +11,8 @@ const CourseCard = ({ course }) => {
         <p>{overView}</p>
       </div>
       <div className="course-card__footer">
-        <p>{createdBy}</p>
-        <p>{price}</p>
+        <p>Course Creator : {createdBy}</p>
+        <p>Total Cost : £{price}</p>
       </div>
     </div>
   );

@@ -3,10 +3,7 @@ package com.nology.fullstackproject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,5 +23,11 @@ public class CourseController {
     public ResponseEntity<List<Course>> getCourses() {
     List<Course> courseList = courseRepo.findAll();
     return ResponseEntity.status(HttpStatus.FOUND).body(courseList);
+    }
+
+    @GetMapping("/courses/{id}")
+    public ResponseEntity<Course> getCourseById(@PathVariable String id) {
+        Course foundCourse = courseRepo.findByid(id);
+        return ResponseEntity.status(HttpStatus.FOUND).body(foundCourse);
     }
 }
