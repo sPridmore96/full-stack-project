@@ -1,9 +1,12 @@
 import './App.css';
+import "./App.scss";
+import Home from './containers/Home/Home';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>working</h1>
+      <Home />
     </div>
   );
 }

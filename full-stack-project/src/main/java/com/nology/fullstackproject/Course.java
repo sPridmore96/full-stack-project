@@ -1,8 +1,6 @@
 package com.nology.fullstackproject;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,14 +16,17 @@ public class Course {
 	private String createdBy;
 	private String price;
 	private String title;
-	private String overView;
+	private String info;
 
-	public Course(String id, String createdBy, String price, String title, String overView) {
+	public Course() {
+	}
+
+	public Course(String id, String createdBy, String price, String title, String info) {
 		this.id = id;
 		this.createdBy = createdBy;
 		this.price = price;
 		this.title = title;
-		this.overView = overView;
+		this.info = info;
 	}
 
 	public String getId() {
@@ -61,11 +62,11 @@ public class Course {
 	}
 
 	public String getOverView() {
-		return overView;
+		return info;
 	}
 
-	public void setOverView(String overView) {
-		this.overView = overView;
+	public void setOverView(String info) {
+		this.info = info;
 	}
 }
 
