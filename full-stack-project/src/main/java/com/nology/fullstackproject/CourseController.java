@@ -12,11 +12,9 @@ import java.util.List;
 @CrossOrigin
 public class CourseController {
 
-    @Autowired
 
-
-    @GetMapping("/courses")
-    public ResponseEntity<List<Course>> getCourses() {
-
-    }
+//    @GetMapping("/courses")
+//    public ResponseEntity<List<Course>> getCourses() {
+//
+//    }
 }
