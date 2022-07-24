@@ -7,40 +7,52 @@ import Header from '../../components/Header/Header';
 const Home = () => {
   const [courses, setCourses] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [dataToShow, SetDataToShow] = useState();
+  const [urlTag, setUrlTag] = useState();
+  // const [url, setUrl] = useState(`http://localhost:8080/courses/`)
 
+
+  let url = `http://localhost:8080/courses`;
+  let courseData = {}
   const getCourses = async () => {
-    let url = 'http://localhost:8080/courses';
     const res = await fetch(url);
     const data = await res.json();
-    setCourses(data);
+    console.log("Re Render");
+    console.log(data);
   };
   useEffect(() => {
+    console.log("use effect used");
     getCourses();
-  }, []);
-
+  }, [url]);
+  
   const handleInputForSearch = (event) => {
     const cleanInput = event.target.value.toLowerCase();
+    console.log("handling Search");
     setSearchTerm(cleanInput);
   };
 
-  const handleIdSearch = () => {
-
+  const handleIdSearch = (event) => {
+    const stringId = event.target.value;
+    const numberId = parseInt(stringId);
+    console.log(numberId);
+    console.log("Getting to clean id");
+    setUrlTag(numberId);
   }
 
-  const filterBySearchTerm = courses.filter((course) => {
+  const filteredBySearch = courses.filter((course) => {
     const titlesToLower = course.title.toLowerCase();
-    return titlesToLower.includes(searchTerm);
+    SetDataToShow(titlesToLower.includes(searchTerm));
   });
 
   return (
     <div className='home'>
-     <Header/>
+      <Header />
       <div className='home__search-area'>
-      <SearchBar label={"Search for your next course"} handleInputForSearch={handleInputForSearch} />
-      <SearchBar label={"Know the course ID, Enter It here : "}/>
+        <SearchBar label={"Search for your next course"} handleInput={handleInputForSearch} />
+        <SearchBar label={"Know the course ID, Enter It here : "} handleInput={handleIdSearch} />
       </div>
       <div className='home__content'>
-      <CourseList courses={filterBySearchTerm} />
+        <CourseList courses={dataToShow} />
       </div>
     </div>
   );
