@@ -1,10 +1,13 @@
 import React from 'react';
 import './CourseCard.scss';
+import {Link} from "react-router-dom";
 
 const CourseCard = ({ course }) => {
-  const { createdBy, price, title, overView } = course;
+  const { createdBy, price, title, overView, id } = course;
+
 
   return (
+    <Link to={`localhost:3000/:${id}`}>
     <div className="course-card">
       <div className="course-card__content">
         <h2>{title}</h2>
@@ -15,6 +18,7 @@ const CourseCard = ({ course }) => {
         <p>Total Cost : £{price}</p>
       </div>
     </div>
+    </Link>
   );
 };
 

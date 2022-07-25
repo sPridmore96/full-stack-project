@@ -1,6 +1,8 @@
-import React from 'react'
-import "./CourseList.scss"
+import React from 'react';
+import "./CourseList.scss";
 import CourseCard from '../CourseCard/CourseCard';
+
+
 
 
 
