@@ -1,0 +1,21 @@
+@use "../../assets/scss/variables" as *;
+
+.header {
+    margin-top: -1.5rem;
+    width: 100vw;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 0 0 3rem;
+    border: 2px solid $colorBlack;
+    border-top: none;
+    border-radius: 15px;
+    background-color: white;
+    background: rgb(230,31,161);
+background: linear-gradient(0deg, rgba(230,31,161,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+
+    &__title {
+        color: white;
+        font-family: $fontSecondary;
+    }
+}

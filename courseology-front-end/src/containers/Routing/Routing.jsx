@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import CourseExtraInfo from '../../components/CourseExtraInfo/CourseExtraInfo';
+import CourseExtraInfo from '../CourseExtraInfo/CourseExtraInfo';
 import Home from '../Home/Home';
 
 const Routing = () => {
@@ -23,7 +23,7 @@ const Routing = () => {
       <Routes>
         <Route path="/" element={<Home courses={courses}/>} />
         <Route
-          path="localhost:3000/:id"
+          path="localhost:3000/:courseId"
           element={<CourseExtraInfo courses={courses}/>}
         />
       </Routes>

@@ -1,8 +1,19 @@
+@use "../../assets/scss/variables" as *;
+
 .course-list{
-    border: solid 2px;
-    width: 98%;
-    height: auto;
-    margin:  3rem auto;
+    background: $colorRed;
+    background: linear-gradient(0deg, $colorRed 2%, $colorSecondary 94%);
     display: flex;
-    flex-wrap: wrap;
+    overflow-x: scroll;
+    margin-left: 0.5rem;
+    width: 100vw;
+    border-radius: 10px;
+
+    &__card{
+        display: inline-flex;
+    }
+
+    &::-webkit-scrollbar{
+        width: 0;
+    }
 }

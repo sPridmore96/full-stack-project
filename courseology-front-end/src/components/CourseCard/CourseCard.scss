@@ -1,27 +1,43 @@
+@use "../../assets/scss/variables" as *;
+
 .course-card{
-    border: solid 2px;
-    margin: 1rem auto;
-    width: 22rem;
-    height: 23rem;
+    background-color: white;
+    color: $colorBlack;
+    margin: 2rem 2rem;
+    width: 17rem;
+    height: 25rem;
     display: flex;
     flex-direction: column;
     border-radius: 20px;
-
+    text-decoration: none;
+    box-shadow: white 3px 3px 15px 0px inset, white -10px -10px 50px 10px inset;
+    
+    
+    &__img{
+        border-top: none;
+        border-radius: 20px 20px 0 0;
+    }
+    
     &__content{
+        padding: 0.4rem;
         & h2 {
+            font-family: $fontPrimary;
             margin-bottom: 1rem;
         }
         height: 70%;
+        font-family: $fontParagraph;
         padding-top: 1rem;
         margin-left: 1rem;
         flex-wrap: wrap;
         margin-bottom: 1rem;
     }
     &__footer{
+        font-family: $fontParagraph;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         text-align: center;
-        margin-right: 1rem;        
+        margin-right: 1rem; 
+        padding-bottom: 0.5rem;       
     }
 }

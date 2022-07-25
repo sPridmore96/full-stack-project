@@ -12,22 +12,26 @@ public class Course {
 	@Id
 	@GeneratedValue(generator = "system-uuid")
 	@GenericGenerator(name="system-uuid", strategy = "uuid")
+
 	private String id;
 	private String createdBy;
 	private String price;
 	private String title;
 	private String info;
+	private  String completeInfo;
 
 	public Course() {
 	}
 
-	public Course(String id, String createdBy, String price, String title, String info) {
+	public Course(String id, String createdBy, String price, String title, String info, String completeInfo) {
 		this.id = id;
 		this.createdBy = createdBy;
 		this.price = price;
 		this.title = title;
 		this.info = info;
+		this.completeInfo = completeInfo;
 	}
+
 
 	public String getId() {
 		return id;
@@ -67,6 +71,13 @@ public class Course {
 
 	public void setOverView(String info) {
 		this.info = info;
+	}
+	public String getDescription() {
+		return completeInfo;
+	}
+
+	public void setDescription(String completeInfo) {
+		this.completeInfo = completeInfo;
 	}
 }
 

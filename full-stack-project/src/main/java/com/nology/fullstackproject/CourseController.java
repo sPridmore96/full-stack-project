@@ -25,7 +25,7 @@ public class CourseController {
     return ResponseEntity.status(HttpStatus.FOUND).body(courseList);
     }
 
-    @GetMapping("/courses/{id}")
+    @GetMapping("/courses/:{id}")
     public ResponseEntity<Course> getCourseById(@PathVariable String id) {
         Course foundCourse = courseRepo.findByid(id);
         return ResponseEntity.status(HttpStatus.FOUND).body(foundCourse);

@@ -10,7 +10,7 @@ const CourseList = ({courses}) => {
 
   return (
     <div className='course-list'>
-        {courses && courses.map(course => <CourseCard key={course.id} course={course}/>)}
+        <div className='course-list__card'>{courses && courses.map(course => <CourseCard key={course.id} course={course}/>)}</div>
     </div>
   )
 }
