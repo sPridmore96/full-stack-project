@@ -1,0 +1,55 @@
+@use "../../assets/scss/variables" as *;
+
+.form-container{
+    width: 98%;
+    height: 100%;
+    margin: 3rem auto;
+    padding: 0.5rem;
+    background: linear-gradient(0deg, rgba(230,31,161,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+
+
+    &__content{
+        border: solid 2px;
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        padding: 2rem;
+        margin: 1rem auto;
+        background-color: #fafafa;
+    }
+    
+    &__form{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title{
+        font-family: $fontSecondary;
+        color: $colorRed;
+    }
+    &__paragraph{
+        margin-top: 1rem;
+        text-align: center;
+        font-family: $fontPrimary;
+        color: $colorPrimary;
+        font-weight: 1000;
+    }
+    &__label{
+        font-family: $fontParagraph;
+        margin: 1rem 0 0.3rem 0;
+        color: $colorPink;
+        font-weight: 700;
+    }
+    &__button{
+        text-align: center;
+    }
+}
+
+#course-overview{
+    height: 2rem;
+}
+
+#course-info{
+    margin-bottom: 2rem;
+    height: 6rem;
+}

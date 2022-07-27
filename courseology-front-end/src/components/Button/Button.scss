@@ -1,0 +1,11 @@
+@use "../../assets/scss/variables" as *;
+
+.button{
+    background-color: $colorSecondary;
+    font-family: $fontSecondary;
+    font-weight: 1000;
+    width: 7rem;
+    height: 3rem;
+    border: 1px solid;
+    border-radius: 20px;
+}

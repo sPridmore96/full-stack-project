@@ -2,9 +2,7 @@ package com.nology.fullstackproject;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Course {
@@ -12,12 +10,13 @@ public class Course {
 	@Id
 	@GeneratedValue(generator = "system-uuid")
 	@GenericGenerator(name="system-uuid", strategy = "uuid")
-
 	private String id;
 	private String createdBy;
 	private String price;
 	private String title;
 	private String info;
+	@Lob
+	@Column(name = "COMPLETE_INFO", length = 512)
 	private  String completeInfo;
 
 	public Course() {

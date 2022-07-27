@@ -3,6 +3,7 @@ import { React, useState } from 'react';
 import CourseList from '../../components/CourseList/CourseList';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import Header from '../../components/Header/Header';
+import Form from '../../components/Form/Form';
 
 const Home = ({courses}) => {
   
@@ -28,6 +29,7 @@ const Home = ({courses}) => {
       </div>
       <div className='home__content'>
         <CourseList courses={filteredBySearchTerm} />
+        <Form/>
       </div>
     </div>
   );

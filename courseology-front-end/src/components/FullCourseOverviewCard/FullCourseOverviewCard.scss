@@ -1,0 +1,35 @@
+@use "../../assets/scss/variables" as *;
+
+.full-course-overview{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    padding: 1rem;
+    margin-top: 1rem;
+
+
+    &__title{
+        font-family: $fontPrimary;
+        margin: 1rem 0 0.5rem 2rem;
+    }
+    &__sub-title{
+        font-family: $fontSecondary;
+        margin: 0 0 2rem 2rem;
+        
+    }
+    &__info{
+        font-family: $fontParagraph;
+        margin: 0 0 2rem 2rem;
+        width: 80%;
+        text-align: center;
+    }
+    &__sale-title{
+        font-family: $fontSecondary;
+        text-align: end;
+        text-decoration: $colorPink underline 3px;
+    }
+    &__button{
+        margin: 0.5rem 0 0 16rem;
+    }
+}

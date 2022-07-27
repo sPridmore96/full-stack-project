@@ -30,4 +30,10 @@ public class CourseController {
         Course foundCourse = courseRepo.findByid(id);
         return ResponseEntity.status(HttpStatus.FOUND).body(foundCourse);
     }
+
+    @PostMapping("/courses")
+    public ResponseEntity<String> createCourse(@RequestBody Course course){
+        courseRepo.save(course);
+        return ResponseEntity.status(HttpStatus.CREATED).body("Course Created!");
+    }
 }
